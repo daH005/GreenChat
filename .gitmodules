@@ -1,3 +1,9 @@
 [submodule "GreenChatApi"]
 	path = GreenChatApi
 	url = https://github.com/daH005/GreenChatApi.git
+[submodule "GreenChatWeb"]
+	path = GreenChatWeb
+	url = https://github.com/daH005/GreenChatWeb.git
+[submodule "GreenChatDesktop"]
+	path = GreenChatDesktop
+	url = https://github.com/daH005/GreenChatDesktop.git
