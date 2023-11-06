@@ -7,6 +7,3 @@
 [submodule "GreenChatDesktop"]
 	path = desktop
 	url = git@github.com:daH005/GreenChatDesktop.git
-[submodule "GreenChatDatabase"]
-	path = db
-	url = git@github.com:daH005/GreenChatDatabase.git
