@@ -1,0 +1,12 @@
+FROM python:3.11
+
+COPY ./api /api
+COPY ./requirements.txt /api/requirements.txt
+WORKDIR /api
+
+ENV PYTHONPATH=/
+
+RUN apt update
+RUN pip3 install -r requirements.txt
+
+CMD ["python3", "http_/mail/main.py"]
