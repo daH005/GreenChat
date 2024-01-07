@@ -1,4 +1,4 @@
 .idea
 __pycache__
 draft.py
-.tar
+*.tar
