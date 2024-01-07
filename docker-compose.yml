@@ -1,0 +1,71 @@
+version: '3.9'
+
+services:
+
+  mysql_db:
+    image: mysql:8.0
+    env_file:
+      - mysql_db.env
+    restart: always
+    ports:
+      - "13306:3306"
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=$$MYSQL_ROOT_PASSWORD --execute \"SHOW DATABASES;\""
+      start_period: 5s
+      interval: 5s
+      timeout: 5s
+      retries: 55
+
+  redis:
+    image: redis:6.0
+    restart: always
+    ports:
+      - "16379:6379"
+
+  api_http:
+    image: greenchatapi_http
+    env_file:
+      - api.env
+    depends_on:
+      mysql_db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    restart: always
+    ports:
+      - "5181:5181"
+
+  api_http_mail:
+    image: greenchatapi_http_mail
+    env_file:
+      - api.env
+    depends_on:
+      api_http:
+        condition: service_started
+    restart: always
+
+  api_websocket:
+    image: greenchatapi_websocket
+    env_file:
+      - api.env
+    depends_on:
+      api_http:
+        condition: service_started
+    restart: always
+    ports:
+      - "5180:5180"
+
+  web:
+    image: greenchatweb
+    env_file:
+      - web.env
+    depends_on:
+      api_http:
+        condition: service_started
+      api_http_mail:
+        condition: service_started
+      api_websocket:
+        condition: service_started
+    restart: always
+    ports:
+      - "5182:5182"
