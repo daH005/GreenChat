@@ -20,7 +20,7 @@ HOST=0.0.0.0
 WEBSOCKET_PORT=5180
 HTTP_PORT=5181
 
-CORS_ORIGINS=http://localhost:5182,http://127.0.0.1:5182
+CORS_ORIGINS=http://localhost:5182,http://127.0.0.1:5182,http://localhost:2222,http://127.0.0.1:2222
 
 JWT_SECRET_KEY=<your_secret_key>
 JWT_ALGORITHM=HS256
@@ -38,11 +38,11 @@ EMAIL_PASSWORD=<your_app_password>
 DB_DRIVERNAME=mysql+mysqldb
 DB_USERNAME=<your_username>
 DB_PASSWORD=<your_password>
-DB_HOST=mysql_db
+DB_HOST=db
 DB_PORT=3306
 DB_NAME=<your_database_name>
 ```
-3. Make `./mysql_db.env` file with the following content:
+3. Make `./db.env` file with the following content:
 ```env
 MYSQL_ROOT_PASSWORD=<your_password>
 MYSQL_DATABASE=<your_database_name>
@@ -55,14 +55,23 @@ DEBUG=False
 HOST=0.0.0.0
 PORT=5182
 ```
-5. Start shell-scripts:
+5. Make `./webserver.env` file with the following content:
+```env
+WEBSITE_URL=http://web:5182
+HTTP_API_URL=http://api_http:5181
+WEBSOCKET_URL=http://api_websocket:5180
+
+HTTP_API_EXTERNAL_URL=http://localhost:5181
+WEBSOCKET_EXTERNAL_URL=ws://localhost:5180
+```
+6. Start shell-scripts:
 ```sh
 ./shell/docker_/build_dockerfiles.sh
 ```
 ```sh
 ./shell/docker_/run.sh
 ```
-6. Wait for successfull starting and go to [http://localhost:5182](http://localhost:5182)
+Wait for successfully starting and go to [http://localhost:2222](http://localhost:2222)
 
 For development:
 ----------------
