@@ -1,4 +1,5 @@
 .idea
+mysql_volume
 __pycache__
 draft.py
 *.tar

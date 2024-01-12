@@ -9,6 +9,8 @@ services:
     restart: always
     ports:
       - "13306:3306"
+    volumes:
+      - ./mysql_volume:/var/lib/mysql
     healthcheck:
       test: "/usr/bin/mysql --user=root --password=$$MYSQL_ROOT_PASSWORD --execute \"SHOW DATABASES;\""
       start_period: 5s
