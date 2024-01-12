@@ -1,0 +1,29 @@
+server {
+    listen 2222;
+	server_name greenchat;
+
+    # Веб-сокет.
+    location /api/websocket {
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection $connection_upgrade;
+        proxy_pass ${WEBSOCKET_URL};
+    }
+
+    # REST api.
+    location /api/http {
+        proxy_pass ${HTTP_API_URL};
+    }
+
+    # Веб-сайт.
+    location / {
+        proxy_pass ${WEBSITE_URL};
+
+        sub_filter '"";  // <- WEBSOCKET_URL' '"${WEBSOCKET_EXTERNAL_URL}";';
+        sub_filter '"";  // <- HTTP_API_URL' '"${HTTP_API_EXTERNAL_URL}";';
+
+        sub_filter_once off;
+        sub_filter_types *;
+    }
+
+}

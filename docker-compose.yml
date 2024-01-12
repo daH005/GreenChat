@@ -2,19 +2,34 @@ version: '3.9'
 
 services:
 
-  mysql_db:
+  webserver:
+    image: nginx:1.25
+    env_file:
+      - webserver.env
+    depends_on:
+      web:
+        condition: service_started
+    volumes:
+      - ./docker_volumes/webserver/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker_volumes/webserver/templates:/etc/nginx/templates
+    ports:
+      - "2222:2222"
+
+  db:
     image: mysql:8.0
     env_file:
-      - mysql_db.env
+      - db.env
+    volumes:
+      - ./docker_volumes/db:/var/lib/mysql
     restart: always
-    ports:
-      - "13306:3306"
     healthcheck:
       test: "/usr/bin/mysql --user=root --password=$$MYSQL_ROOT_PASSWORD --execute \"SHOW DATABASES;\""
       start_period: 5s
       interval: 5s
       timeout: 5s
       retries: 55
+    ports:
+      - "13306:3306"
 
   redis:
     image: redis:6.0
@@ -27,7 +42,7 @@ services:
     env_file:
       - api.env
     depends_on:
-      mysql_db:
+      db:
         condition: service_healthy
       redis:
         condition: service_started
