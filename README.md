@@ -11,7 +11,7 @@ Few words about this project
 Docker deployment steps:
 ------------------------
 
-1. Pull
+1. Clone (and all submodules)
 2. Make `./api.env` file with the following content:
 ```env
 DEBUG=False
@@ -67,7 +67,7 @@ PORT=5182
 For development:
 ----------------
 
-1. Pull
+1. Clone (and all submodules)
 2. Provide the mysql with version >= 8.0 and Database, User
 3. Provide the redis with version >= 6.0
 4. Provide the virtual environment
