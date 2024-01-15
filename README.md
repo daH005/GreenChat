@@ -60,9 +60,6 @@ PORT=5182
 WEBSITE_URL=http://web:5182
 HTTP_API_URL=http://api_http:5181
 WEBSOCKET_URL=http://api_websocket:5180
-
-HTTP_API_EXTERNAL_URL=http://localhost:5181
-WEBSOCKET_EXTERNAL_URL=ws://localhost:5180
 ```
 6. Start shell-scripts:
 ```sh
