@@ -7,12 +7,12 @@ server {
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection $connection_upgrade;
-        proxy_pass ${WEBSOCKET_URL};
+        proxy_pass ${WEBSOCKET_URL}/;
     }
 
     # REST api.
     location /api/http {
-        proxy_pass ${HTTP_API_URL};
+        proxy_pass ${HTTP_API_URL}/;
     }
 
     # Веб-сайт.
