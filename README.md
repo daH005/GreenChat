@@ -76,14 +76,16 @@ For development:
 1. Clone (and all submodules)
 2. Provide the mysql with version >= 8.0 and Database, User
 3. Provide the redis with version >= 6.0
-4. Provide the virtual environment
-5. Run `pip install -r requirements.txt` from root directory
-6. Make `./api/.env` file with content exact as `./api.env`
-7. Make `./web/.env` file with content exact as `./web.env`
-8. Run `pytest ./api/_tests` (don't forgot about `PYTHONPATH` environment variable) for project checking
-9. Run all project procceses (don't forgot about `PYTHONPATH` environment variable):
+4. Provide the node.js if you want to check frontend
+5. Provide the virtual environment
+6. Run `pip install -r requirements.txt` from root directory
+7. Make `./api/.env` file with content exact as `./api.env`
+8. Make `./web/.env` file with content exact as `./web.env`
+9. Run `pytest ./api/_tests` (don't forgot about `PYTHONPATH` environment variable) for check backend
+10. Run `node ./web/static/js/_tests/testAll.js` for check frontend
+11. Run all project procceses (don't forgot about `PYTHONPATH` environment variable):
 - `python3 ./api/http_/main.py`
 - `python3 ./api/http_/mail/main.py`
 - `python3 ./api/websocket_/main.py`
 - `python3 ./web/main.py`
-10. Go to [http://localhost:5182](http://localhost:5182)
+12. Go to [http://localhost:5182](http://localhost:5182)
