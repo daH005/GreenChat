@@ -28,12 +28,14 @@ JWT_ACCESS_TOKEN_EXPIRES=604800
 
 REDIS_HOST=redis
 REDIS_PORT=6379
+REDIS_CODES_EXPIRES=60
 
 SMTP_HOST=smtp.mail.ru
 SMTP_PORT=465
 
 EMAIL=<your_email_for_codes_sending>
 EMAIL_PASSWORD=<your_app_password>
+TEST_PASS_EMAIL_CODE=9999
 
 DB_DRIVERNAME=mysql+mysqldb
 DB_USERNAME=<your_username>
