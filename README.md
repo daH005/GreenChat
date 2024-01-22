@@ -84,8 +84,8 @@ For development:
 9. Run `pytest ./api/_tests` (don't forgot about `PYTHONPATH` environment variable) for check backend
 10. For check frontend run:
 - `node ./web/static/js/_tests/testAll.js`
-- `pytest ./web/_tests`
-11. Run all project procceses (don't forgot about `PYTHONPATH` environment variable):
+- `pytest ./web/_tests` (you can to run this after 11th step)
+11. Run all project processes (don't forgot about `PYTHONPATH` environment variable):
 - `python3 ./api/http_/main.py`
 - `python3 ./api/http_/mail/main.py`
 - `python3 ./api/websocket_/main.py`
