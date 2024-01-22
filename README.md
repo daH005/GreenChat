@@ -79,7 +79,7 @@ For development:
 4. Provide the node.js if you want to check frontend
 5. Provide the virtual environment
 6. Run `pip install -r requirements.txt` from root directory
-7. Make `./api/.env` file with content exact as `./api.env`
+7. Make `./api/.env` file with content exact as `./api.env` (but you have to set `DEBUG` as `True` for selenium-tests)
 8. Make `./web/.env` file with content exact as `./web.env`
 9. Run `pytest ./api/_tests` (don't forgot about `PYTHONPATH` environment variable) for check backend
 10. For check frontend run:
