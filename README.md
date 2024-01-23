@@ -28,12 +28,14 @@ JWT_ACCESS_TOKEN_EXPIRES=604800
 
 REDIS_HOST=redis
 REDIS_PORT=6379
+REDIS_CODES_EXPIRES=60
 
 SMTP_HOST=smtp.mail.ru
 SMTP_PORT=465
 
 EMAIL=<your_email_for_codes_sending>
 EMAIL_PASSWORD=<your_app_password>
+TEST_PASS_EMAIL_CODE=9999
 
 DB_DRIVERNAME=mysql+mysqldb
 DB_USERNAME=<your_username>
@@ -76,14 +78,18 @@ For development:
 1. Clone (and all submodules)
 2. Provide the mysql with version >= 8.0 and Database, User
 3. Provide the redis with version >= 6.0
-4. Provide the virtual environment
-5. Run `pip install -r requirements.txt` from root directory
-6. Make `./api/.env` file with content exact as `./api.env`
-7. Make `./web/.env` file with content exact as `./web.env`
-8. Run `pytest ./api/_tests` (don't forgot about `PYTHONPATH` environment variable) for project checking
-9. Run all project procceses (don't forgot about `PYTHONPATH` environment variable):
+4. Provide the node.js if you want to check frontend
+5. Provide the virtual environment
+6. Run `pip install -r requirements.txt` from root directory
+7. Make `./api/.env` file with content exact as `./api.env` (but you have to set `DEBUG` as `True` for selenium-tests)
+8. Make `./web/.env` file with content exact as `./web.env`
+9. Run `pytest ./api/_tests` (don't forgot about `PYTHONPATH` environment variable) for check backend
+10. For check frontend run:
+- `node ./web/static/js/_tests/testAll.js`
+- `pytest ./web/_tests` (you can to run this after 11th step)
+11. Run all project processes (don't forgot about `PYTHONPATH` environment variable):
 - `python3 ./api/http_/main.py`
 - `python3 ./api/http_/mail/main.py`
 - `python3 ./api/websocket_/main.py`
 - `python3 ./web/main.py`
-10. Go to [http://localhost:5182](http://localhost:5182)
+12. Go to [http://localhost:5182](http://localhost:5182)
