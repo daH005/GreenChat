@@ -1,6 +1,6 @@
 server {
     listen 2222;
-	server_name greenchat;
+    server_name greenchat;
 
     # Веб-сокет.
     location /api/websocket {
