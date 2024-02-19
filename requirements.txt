@@ -44,6 +44,7 @@ PyJWT==2.8.0
 PyMySQL==1.1.0
 PySocks==1.7.1
 pytest==7.4.3
+pytest-asyncio==0.23.5
 pytest-stub==1.1.0
 pytest-subtests==0.11.0
 python-dateutil==2.8.2
