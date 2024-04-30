@@ -36,6 +36,7 @@ SMTP_PORT=465
 EMAIL=<your_email_for_codes_sending>
 EMAIL_PASSWORD=<your_app_password>
 TEST_PASS_EMAIL_CODE=9999
+MAX_ATTEMPTS_TO_CHECK_EMAIL_CODE=5
 
 DB_DRIVERNAME=mysql+mysqldb
 DB_USERNAME=<your_username>
