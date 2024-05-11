@@ -12,6 +12,7 @@ services:
     volumes:
       - ./docker_volumes/webserver/nginx.conf:/etc/nginx/nginx.conf
       - ./docker_volumes/webserver/templates:/etc/nginx/templates
+    restart: always
     ports:
       - "2222:2222"
 
@@ -46,26 +47,22 @@ services:
         condition: service_healthy
       redis:
         condition: service_started
+      api_http_email:
+        condition: service_started
     restart: always
     ports:
       - "5181:5181"
 
-  api_http_mail:
-    image: greenchatapi_http_mail
+  api_http_email:
+    image: greenchatapi_http_email
     env_file:
       - api.env
-    depends_on:
-      api_http:
-        condition: service_started
     restart: always
 
   api_websocket:
     image: greenchatapi_websocket
     env_file:
       - api.env
-    depends_on:
-      api_http:
-        condition: service_started
     restart: always
     ports:
       - "5180:5180"
@@ -77,7 +74,7 @@ services:
     depends_on:
       api_http:
         condition: service_started
-      api_http_mail:
+      api_http_email:
         condition: service_started
       api_websocket:
         condition: service_started

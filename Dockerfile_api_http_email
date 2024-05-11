@@ -9,4 +9,4 @@ ENV PYTHONPATH=/
 RUN apt update
 RUN pip3 install -r requirements.txt
 
-CMD ["python3", "http_/mail/main.py"]
+CMD ["python3", "http_/email/main.py"]
