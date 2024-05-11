@@ -89,7 +89,7 @@ For development:
 - `node ./web/static/js/_tests/testAll.js`
 - `pytest ./web/_tests` (you can to run this after 11th step)
 11. Run all project processes (don't forgot about `PYTHONPATH` environment variable):
-- `python3 ./api/http_/emain.py`
+- `python3 ./api/http_/main.py`
 - `python3 ./api/http_/email/main.py`
 - `python3 ./api/websocket_/main.py`
 - `python3 ./web/main.py`
