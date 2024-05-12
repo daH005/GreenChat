@@ -1,12 +1,19 @@
 Few words about this project
 ----------------------------
-`GreenChat` is the messenger on Python. Technologies used:
-- Flask
-- Websocket
-- Mysql
-- Redis
-- Celery
-- HTML, CSS, JS
+`GreenChat` is the messenger on Python. The project contains:
+1. Backend:
+- RESTFul API on Flask
+- Real-time messaging using Websocket
+- Mysql (main database)
+- Redis (for email codes keeping with expiration)
+- Celery (for email codes sending)
+- Nginx
+- Docker
+
+2. Frontend:
+- Simple stack - HTML, CSS, JS
+
+Project is building by idea "feel what feels developers of messengers".
 
 Docker deployment steps:
 ------------------------
