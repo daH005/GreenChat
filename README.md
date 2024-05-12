@@ -13,6 +13,7 @@ Few words about this project
 2. Frontend:
 - Simple stack - HTML, CSS, JS
 
+I don't follow the thought of just to steal the idea of Whatsapp or Telegram, this is silly.
 Project is building by idea "feel what feels developers of messengers".
 
 Docker deployment steps:
