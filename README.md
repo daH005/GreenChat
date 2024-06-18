@@ -16,6 +16,10 @@ Few words about this project
 I don't follow the thought of just to steal the idea of Whatsapp or Telegram.
 Project is being develoved with the goal of feeling how real messengers are developed.
 
+Demo
+----
+https://github.com/daH005/GreenChat/assets/60618372/665d1bde-2056-4c78-92fa-a9d5aaf42bf4
+
 Docker deployment steps:
 ------------------------
 
