@@ -1,17 +1,22 @@
 Few words about this project
 ----------------------------
-`GreenChat` is the messenger on Python. The project contains:
-1. Backend:
-- Real-time messaging using Websocket
-- RESTFul API on Flask
-- Redis (for email codes keeping with expiration)
-- Celery (for email codes sending)
-- Mysql (main database)
-- Docker-compose
-- Nginx
+`GreenChat` is the multifunctional messenger similar to Whatsapp, Telegram. The project contains:
+1. Backend (on `Python`):
+- Real-time messaging using `Websocket`
+- RESTFul API on `Flask` + `Swagger` documentation
+- `pytest`
+- `smtp`
+- `Redis` (for email codes keeping with expiration)
+- `Celery` (for email codes sending)
+- `Mysql` (main database) + `SQLAlchemy` + `Alembic`
+- `Docker-compose`
+- `Nginx`
+- `Ngrok`
 
 2. Frontend:
-- HTML, CSS, TS -> JS
+- `HTML`, `CSS`, `TS` -> `JS`
+- `node.js` for JS tests and TS compilation
+- `Selenium`
 
 I don't follow the thought of just to steal the idea of Whatsapp or Telegram.
 Project is being develoved with the goal of feeling how real messengers are developed.
