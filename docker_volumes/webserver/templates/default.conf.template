@@ -19,8 +19,8 @@ server {
     location / {
         proxy_pass ${WEBSITE_URL};
 
-        sub_filter '"";  // <- WEBSOCKET_URL' '"/api/websocket";';
-        sub_filter '"";  // <- HTTP_API_URL' '"/api/http";';
+        sub_filter '""; // <- WEBSOCKET_URL' '"/api/websocket";';
+        sub_filter '""; // <- HTTP_API_URL' '"/api/http";';
 
         sub_filter_once off;
         sub_filter_types *;
