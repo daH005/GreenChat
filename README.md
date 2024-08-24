@@ -1,4 +1,4 @@
-Few words about this project
+A few words about this project
 ----------------------------
 `GreenChat` is a messenger similar to Whatsapp, Telegram. This project contains:
 1. Backend (on `Python`):
