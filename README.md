@@ -1,13 +1,13 @@
-Few words about this project
+A few words about this project
 ----------------------------
-`GreenChat` is the multifunctional messenger similar to Whatsapp, Telegram. The project contains:
+`GreenChat` is a messenger similar to Whatsapp, Telegram. This project contains:
 1. Backend (on `Python`):
 - Real-time messaging using `Websocket`
 - RESTFul API on `Flask` + `Swagger` documentation
 - `pytest`
 - `smtp`
-- `Redis` (for email codes keeping with expiration)
-- `Celery` (for email codes sending)
+- `Redis` (to store expiring email-codes)
+- `Celery` (to send email-codes)
 - `Mysql` (main database) + `SQLAlchemy` + `Alembic`
 - `Docker-compose`
 - `Nginx`
@@ -15,17 +15,16 @@ Few words about this project
 
 2. Frontend:
 - `HTML`, `CSS`, `TS` -> `JS`
-- `node.js` for JS tests and TS compilation
+- `node.js` (for JS-tests and TS-compilation)
 - `Selenium`
 
-I don't follow the thought of just to steal the idea of Whatsapp or Telegram.
-Project is being develoved with the goal of feeling how real messengers are developed.
+This project is being develoved with the goal of feeling how the real messengers are developed.
 
 Demo
 ----
 https://github.com/daH005/GreenChat/assets/60618372/665d1bde-2056-4c78-92fa-a9d5aaf42bf4
 
-Docker deployment steps:
+Docker-deployment steps:
 ------------------------
 
 1. Clone (and all submodules)
@@ -94,20 +93,20 @@ For development:
 ----------------
 
 1. Clone (and all submodules)
-2. Provide the mysql with version >= 8.0 and Database, User
-3. Provide the redis with version >= 6.0
-4. Provide the node.js if you want to check frontend
-5. Provide the python virtual environment
-6. Run `pip install -r requirements.txt` from root directory
-7. Make `./api/.env` file with content exact as `./api.env` (but you have to set `DEBUG` as `True` for selenium-tests)
-8. Make `./web/.env` file with content exact as `./web.env`
+2. Provide `mysql` with the version >= 8.0 and Database, User
+3. Provide `redis` with the version >= 6.0
+4. Provide `node.js` if you want to check frontend
+5. Provide `python` virtual environment
+6. Run `pip install -r requirements.txt` from the root directory
+7. Make `./api/.env` file with the content exact as `./api.env` (but you have to set `DEBUG` as `True` for selenium-tests)
+8. Make `./web/.env` file with the content exact as `./web.env`
 9. Run `pytest ./api/_tests` (don't forgot about `PYTHONPATH` environment variable) for check backend
-10. Run all project processes (don't forgot about `PYTHONPATH` environment variable):
+10. Run all processes of the project (don't forgot about `PYTHONPATH` environment variable):
 - `python3 ./api/http_/main.py`
 - `python3 ./api/http_/email/main.py`
 - `python3 ./api/websocket_/main.py`
 - `python3 ./web/main.py`
-11. For check frontend run:
+11. Check frontend:
 - `node ./web/static/js/_tests/testAll.js`
-- `pytest ./web/_tests` (you can to run this after 11th step)
+- `pytest ./web/_tests` (you can run this only after 12'th step)
 12. Go to [http://localhost:5182](http://localhost:5182)
