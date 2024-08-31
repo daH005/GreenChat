@@ -49,6 +49,8 @@ services:
         condition: service_started
       api_http_email:
         condition: service_started
+    volumes:
+      - ./api/media:/api/media
     restart: always
     ports:
       - "5181:5181"
