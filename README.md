@@ -18,7 +18,7 @@ A few words about this project
 - `node.js` (for JS-tests and TS-compilation)
 - `Selenium`
 
-This project is being develoved with the goal of feeling how the real messengers are developed.
+This project is being developed with the goal of feeling how the real messengers are developed.
 
 Demo
 ----
@@ -40,7 +40,8 @@ CORS_ORIGINS=http://localhost:5182,http://127.0.0.1:5182,http://localhost:2222,h
 
 JWT_SECRET_KEY=<your_secret_key>
 JWT_ALGORITHM=HS256
-JWT_ACCESS_TOKEN_EXPIRES=604800
+JWT_ACCESS_TOKEN_EXPIRES=3600
+JWT_REFRESH_TOKEN_EXPIRES=604800
 
 REDIS_HOST=redis
 REDIS_PORT=6379
