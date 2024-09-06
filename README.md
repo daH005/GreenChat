@@ -81,7 +81,7 @@ WEBSITE_URL=http://web:5182
 HTTP_API_URL=http://api_http:5181
 WEBSOCKET_URL=http://api_websocket:5180
 ```
-6. Provide `certificate.crt` and `private.key` files in `api/ssl_` folder
+6. Provide `certificate.crt` and `private.key` files in `api/ssl_` and `web/ssl_` folders
 7. Start shell-scripts:
 ```sh
 ./shell/docker_/build_dockerfiles.sh
@@ -102,7 +102,7 @@ For development:
 6. Run `pip install -r requirements.txt` from the root directory
 7. Make `./api/.env` file with the content exact as `./api.env` (but you have to set `DEBUG` as `True` for selenium-tests)
 8. Make `./web/.env` file with the content exact as `./web.env`
-9. Provide `certificate.crt` and `private.key` files in `api/ssl_` folder
+9. Provide `certificate.crt` and `private.key` files in `api/ssl_` and `web/ssl_` folders
 10. Run `pytest ./api/_tests` (don't forgot about `PYTHONPATH` environment variable) for check backend
 Run all processes of the project (don't forgot about `PYTHONPATH` environment variable):
 - `python3 ./api/http_/main.py`
