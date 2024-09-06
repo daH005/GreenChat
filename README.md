@@ -36,7 +36,7 @@ HOST=0.0.0.0
 WEBSOCKET_PORT=5180
 HTTP_PORT=5181
 
-CORS_ORIGINS=http://localhost:5182,http://127.0.0.1:5182,http://localhost:2222,http://127.0.0.1:2222
+CORS_ORIGINS=http://localhost:5182,http://127.0.0.1:5182,http://localhost:2223,https://localhost:5182,https://127.0.0.1:5182,https://localhost:2223
 
 JWT_SECRET_KEY=<your_secret_key>
 JWT_ALGORITHM=HS256
