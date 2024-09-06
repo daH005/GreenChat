@@ -70,7 +70,7 @@ tzdata==2023.3
 urllib3==2.1.0
 vine==5.1.0
 wcwidth==0.2.12
-webdriver-manager==4.0.1
+webdriver-manager==4.0.2
 websocket-client==1.6.4
 websockets==12.0
 Werkzeug==3.0.1
