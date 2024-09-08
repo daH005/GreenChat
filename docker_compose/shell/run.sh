@@ -1,3 +1,3 @@
-cd ../../
+cd ../
 sudo docker compose build
 sudo docker compose up -d

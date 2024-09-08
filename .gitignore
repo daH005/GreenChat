@@ -1,6 +1,2 @@
 .idea
-docker_volumes/db/*
-__pycache__
-draft.py
-*.tar
-*.env
+.env
