@@ -32,7 +32,7 @@ HTTP_PORT=5181
 
 CORS_ORIGINS=http://localhost:5182,http://127.0.0.1:5182,http://localhost:2223,https://localhost:5182,https://127.0.0.1:5182,https://localhost:2223
 
-JWT_SECRET_KEY=<fill-it>
+JWT_SECRET_KEY=fill-it
 JWT_ALGORITHM=HS256
 JWT_ACCESS_TOKEN_EXPIRES=3600
 JWT_REFRESH_TOKEN_EXPIRES=604800
@@ -44,24 +44,24 @@ SMTP_HOST=smtp.mail.ru
 SMTP_PORT=465
 
 EMAIL=greenchatapi_http_mail@mail.ru
-EMAIL_PASSWORD=<fill-it>
+EMAIL_PASSWORD=fill-it
 EMAIL_CODES_EXPIRES=60
 EMAIL_PASS_CODE=9999
 EMAIL_CODES_MAX_ATTEMPTS=5
 
 DB_DRIVERNAME=mysql+mysqldb
 DB_USERNAME=GreenChatAdmin
-DB_PASSWORD=<fill-it>
+DB_PASSWORD=fill-it
 DB_HOST=db
 DB_PORT=3306
 DB_NAME=GreenChatDB
 ```
 3. Make `/docker_compose/containers/db/.env` file with the following content:
 ```env
-MYSQL_ROOT_PASSWORD=<fill-it>
+MYSQL_ROOT_PASSWORD=fill-it
 MYSQL_DATABASE=GreenChatDB
 MYSQL_USER=GreenChatAdmin
-MYSQL_PASSWORD=<fill-it>
+MYSQL_PASSWORD=fill-it
 ```
 4. Make `/docker_compose/containers/web/.env` file with the following content:
 ```env
