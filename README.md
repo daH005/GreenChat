@@ -75,7 +75,7 @@ WEBSITE_URL=http://web:5182
 HTTP_API_URL=http://api:5181
 WEBSOCKET_URL=http://api:5180
 ```
-6. Provide `certificate.crt` and `private.key` files in `./api/ssl_` and `./web/ssl_` folders
+6. Provide `/etc/ssl/certs/greenchat_certificate.crt` and `/etc/ssl/private/greenchat_private.key`
 7. Start shell-scripts:
 ```sh
 ./docker_compose/shell/run.sh
