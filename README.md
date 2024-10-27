@@ -79,9 +79,9 @@ MYSQL_PASSWORD=password
 ```
 5. Make `./docker_compose/containers/webserver/.env` file with the following content:
 ```env
-WEBSITE_URL=http://web:5182
-HTTP_API_URL=http://api:5181
-WEBSOCKET_URL=http://api:5180
+WEBSITE_URL=https://web:5182
+HTTP_API_URL=https://api:5181
+WEBSOCKET_URL=https://api:5180
 ```
 6. Provide `./ssl/certificate.crt` and `./ssl/private.key`
 7. Start shell-scripts:
