@@ -2,6 +2,9 @@ server {
     listen 2223 ssl;
     server_name greenchat;
 
+    ssl_certificate /etc/ssl/certs/certificate.crt;
+    ssl_certificate_key /etc/ssl/private/private.key;
+
     # Веб-сокет.
     location /api/websocket {
         proxy_http_version 1.1;

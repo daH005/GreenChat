@@ -45,14 +45,18 @@ services:
     build:
       context: ../api
     env_file:
-      - ./containers/api/.env
+      - ../api/.env
+    environment:
+      - REDIS_HOST=redis
+      - DB_HOST=db
     depends_on:
       db:
         condition: service_healthy
       redis:
         condition: service_started
     volumes:
-      - ./containers/api/volume/media:/api/media
+      - ../ssl:/ssl
+      - ../api/media:/api/media
     restart: always
     ports:
       - "5180:5180"
@@ -63,10 +67,12 @@ services:
     build:
       context: ../web
     env_file:
-      - ./containers/web/.env
+      - ../web/.env
     depends_on:
       api:
         condition: service_started
+    volumes:
+      - ../ssl:/ssl
     restart: always
     ports:
       - "5182:5182"
