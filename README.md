@@ -22,7 +22,7 @@ Docker-deployment steps:
 ------------------------
 
 1. Clone (and all submodules)
-2. Make `/docker_compose/containers/api/.env` file with the following content:
+2. Make `./docker_compose/containers/api/.env` file with the following content:
 ```env
 DEBUG=True
 
@@ -56,28 +56,28 @@ DB_HOST=db
 DB_PORT=3306
 DB_NAME=GreenChatDB
 ```
-3. Make `/docker_compose/containers/db/.env` file with the following content:
+3. Make `./docker_compose/containers/db/.env` file with the following content:
 ```env
 MYSQL_ROOT_PASSWORD=fill-it
 MYSQL_DATABASE=GreenChatDB
 MYSQL_USER=GreenChatAdmin
 MYSQL_PASSWORD=fill-it
 ```
-4. Make `/docker_compose/containers/web/.env` file with the following content:
+4. Make `./docker_compose/containers/web/.env` file with the following content:
 ```env
 DEBUG=False
 HOST=0.0.0.0
 PORT=5182
 ```
-5. Make `/docker_compose/containers/webserver/.env` file with the following content:
+5. Make `./docker_compose/containers/webserver/.env` file with the following content:
 ```env
 WEBSITE_URL=http://web:5182
 HTTP_API_URL=http://api:5181
 WEBSOCKET_URL=http://api:5180
 ```
-6. Provide `certificate.crt` and `private.key` files in `api/ssl_` and `web/ssl_` folders
+6. Provide `certificate.crt` and `private.key` files in `./api/ssl_` and `./web/ssl_` folders
 7. Start shell-scripts:
 ```sh
-/docker_compose/shell/run.sh
+./docker_compose/shell/run.sh
 ```
 Wait for successfully starting and go to [http://localhost:2222](http://localhost:2222)
