@@ -80,4 +80,4 @@ WEBSOCKET_URL=http://api:5180
 ```sh
 ./docker_compose/shell/run.sh
 ```
-Wait for successfully starting and go to [http://localhost:2222](http://localhost:2222)
+Wait for successfully starting and go to [https://localhost:2222](https://localhost:2222)
