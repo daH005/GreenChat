@@ -1,5 +1,5 @@
 server {
-    listen 2222;
+    listen 2223 ssl;
     server_name greenchat;
 
     # Веб-сокет.
