@@ -21,7 +21,14 @@ https://github.com/daH005/GreenChat/assets/60618372/665d1bde-2056-4c78-92fa-a9d5
 Docker-deployment steps:
 ------------------------
 
-1. Clone (and all submodules)
+1. Clone the repository (and all submodules):
+```sh
+git clone --recurse-submodules git@github.com:daH005/GreenChat.git .
+```
+or
+```sh
+git clone --recurse-submodules https://github.com/daH005/GreenChat.git .
+```  
 2. Make `./api/.env` file with the following content:
 ```env
 DEBUG=True
