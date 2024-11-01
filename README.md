@@ -16,7 +16,7 @@ This project is being developed with the goal of feeling how the real messengers
 
 Demo
 ----
-https://github.com/daH005/GreenChat/assets/60618372/665d1bde-2056-4c78-92fa-a9d5aaf42bf4
+https://github.com/user-attachments/assets/c55950ab-9b6e-4dd1-9568-c67954e65dfb
 
 Docker-deployment steps:
 ------------------------
