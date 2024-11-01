@@ -55,7 +55,7 @@ services:
       redis:
         condition: service_started
     volumes:
-      - ../ssl:/ssl
+      - ../ssl:/home/user/ssl
       - ../api/media:/api/media
     restart: always
     ports:
@@ -72,7 +72,7 @@ services:
       api:
         condition: service_started
     volumes:
-      - ../ssl:/ssl
+      - ../ssl:/home/user/ssl
     restart: always
     ports:
       - "5182:5182"
