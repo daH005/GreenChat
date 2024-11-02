@@ -1,16 +1,14 @@
 A few words about this project
 ----------------------------
 `GreenChat` is a messenger similar to Whatsapp on Python. This project contains:
-1. Backend:
-- REST API (Flask)
-- Websocket (`websockets` library)
-- Background email code sending (Celery)
-- Database (MySQL)
 
-2. Frontend:
-- HTML, CSS, TS
-- node.js
-- Selenium
+Backend:
+   
+![Backend](https://skillicons.dev/icons?i=python,flask,mysql,redis,docker)
+
+Frontend:
+
+![Frontend](https://skillicons.dev/icons?i=html,css,js,ts,nodejs,selenium,docker)
 
 This project is being developed with the goal of feeling how the real messengers are developed.
 
