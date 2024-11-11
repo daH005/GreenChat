@@ -77,7 +77,7 @@ CHROMEDRIVER_PATH=/usr/bin/chromedriver
 ```
 4. Make `./docker_compose/containers/db/.env` file with the following content:
 ```env
-MYSQL_ROOT_PASSWORD==fill-it
+MYSQL_ROOT_PASSWORD=fill-it
 MYSQL_DATABASE=GreenChatDB
 MYSQL_USER=GreenChatAdmin
 MYSQL_PASSWORD=fill-it
