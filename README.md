@@ -14,7 +14,7 @@ This project is being developed with the goal of feeling how the real messengers
 
 Demo
 ----
-https://github.com/user-attachments/assets/c55950ab-9b6e-4dd1-9568-c67954e65dfb
+![image](https://github.com/user-attachments/assets/41a456f2-690a-48d9-b792-29ec3e19af4e)
 
 Docker-deployment steps:
 ------------------------
