@@ -63,6 +63,7 @@ DB_PASSWORD=fill-it
 DB_HOST=localhost
 DB_PORT=3306
 DB_NAME=GreenChatDB
+DB_TEST_NAME=GreenChatTestDB
 ```
 3. Make `./web/.env` file with the following content:
 ```env
