@@ -58,11 +58,17 @@ EMAIL_PASS_CODE=9999
 EMAIL_CODES_MAX_ATTEMPTS=5
 
 DB_DRIVERNAME=mysql+mysqldb
+
 DB_USERNAME=GreenChatAdmin
 DB_PASSWORD=fill-it
 DB_HOST=localhost
 DB_PORT=3306
 DB_NAME=GreenChatDB
+
+DB_TEST_USERNAME=GreenChatAdmin
+DB_TEST_PASSWORD=fill-it
+DB_TEST_HOST=localhost
+DB_TEST_PORT=3306
 DB_TEST_NAME=GreenChatTestDB
 
 USER_AVATAR_MAX_CONTENT_LENGTH=314572800
@@ -89,14 +95,21 @@ MYSQL_DATABASE=GreenChatDB
 MYSQL_USER=GreenChatAdmin
 MYSQL_PASSWORD=fill-it
 ```
-5. Make `./docker_compose/containers/webserver/.env` file with the following content:
+5. Make `./docker_compose/containers/test_db/.env` file with the following content:
+```env
+MYSQL_ROOT_PASSWORD=fill-it
+MYSQL_DATABASE=GreenChatTestDB
+MYSQL_USER=GreenChatAdmin
+MYSQL_PASSWORD=fill-it
+```
+6. Make `./docker_compose/containers/webserver/.env` file with the following content:
 ```env
 WEBSITE_URL=https://web:5182
 HTTP_API_URL=https://api:5181
 WEBSOCKET_URL=https://api:5180
 ```
-6. Provide `./ssl/certificate.crt` and `./ssl/private.key`
-7. Start shell-scripts:
+7. Provide `./ssl/certificate.crt` and `./ssl/private.key` with `./build_helpers/gen_ssh_files.sh`
+8. Start shell-scripts:
 ```sh
 ./docker_compose/shell/run.sh
 ```
