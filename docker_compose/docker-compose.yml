@@ -34,6 +34,20 @@ services:
     ports:
       - "13306:3306"
 
+  test_db:
+    image: mysql:8.0
+    env_file:
+      - ./containers/test_db/.env
+    restart: always
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=$$MYSQL_ROOT_PASSWORD --execute \"SHOW DATABASES;\""
+      start_period: 5s
+      interval: 5s
+      timeout: 5s
+      retries: 55
+    ports:
+      - "13307:3306"
+
   redis:
     image: redis:6.0
     restart: always
@@ -49,8 +63,11 @@ services:
     environment:
       - REDIS_HOST=redis
       - DB_HOST=db
+      - DB_TEST_HOST=test_db
     depends_on:
       db:
+        condition: service_healthy
+      test_db:
         condition: service_healthy
       redis:
         condition: service_started
