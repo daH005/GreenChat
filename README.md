@@ -85,8 +85,6 @@ PORT=5182
 
 SSL_CERTFILE=../ssl/certificate.crt
 SSL_KEYFILE=../ssl/private.key
-
-CHROMEDRIVER_PATH=/usr/bin/chromedriver
 ```
 4. Make `./docker_compose/containers/db/.env` file with the following content:
 ```env
