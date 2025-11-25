@@ -113,6 +113,8 @@ WEBSOCKET_URL=https://api:5180
 ```
 Wait for successfully starting and go to [https://localhost:2223](https://localhost:2223)
 
-For development
----------------
-Look at `build_helpers`. Project have to be on Linux.
+To start Selenium GUI tests (It was done on Ubuntu 25.10):
+- Install Firefox
+- Install Geckodriver and place it at `/usr/bin/geckodriver`
+- Create virtual environment and install the requirements with `requirements.txt` in `./web/_tests`
+- Run `sh run_tests.sh` in `./web/_tests`
