@@ -26,7 +26,7 @@ services:
       - ./containers/db/volume:/var/lib/mysql
     restart: always
     healthcheck:
-      test: "/usr/bin/mysql --user=root --password=$$MYSQL_ROOT_PASSWORD --execute \"SHOW DATABASES;\""
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
       start_period: 5s
       interval: 5s
       timeout: 5s
@@ -40,7 +40,7 @@ services:
       - ./containers/test_db/.env
     restart: always
     healthcheck:
-      test: "/usr/bin/mysql --user=root --password=$$MYSQL_ROOT_PASSWORD --execute \"SHOW DATABASES;\""
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
       start_period: 5s
       interval: 5s
       timeout: 5s
