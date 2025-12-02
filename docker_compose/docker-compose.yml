@@ -73,7 +73,7 @@ services:
         condition: service_started
     volumes:
       - ../ssl:/home/user/ssl
-      - ../api/media:/api/media
+      - ../api/media:/home/user/api/media
     restart: always
     ports:
       - "5180:5180"
