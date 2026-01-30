@@ -32,7 +32,7 @@ services:
       timeout: 5s
       retries: 5
     ports:
-      - "13306:3306"
+      - "127.0.0.1:13306:3306"
 
   test_db:
     image: mysql:8.0
@@ -46,13 +46,13 @@ services:
       timeout: 5s
       retries: 5
     ports:
-      - "13307:3306"
+      - "127.0.0.1:13307:3306"
 
   redis:
     image: redis:6.0
     restart: always
     ports:
-      - "16379:6379"
+      - "127.0.0.1:16379:6379"
 
   api:
     image: greenchatapi
@@ -75,8 +75,8 @@ services:
       - ../api/media:/home/user/api/media
     restart: always
     ports:
-      - "5180:5180"
-      - "5181:5181"
+      - "127.0.0.1:5180:5180"
+      - "127.0.0.1:5181:5181"
 
   web:
     image: greenchatweb
@@ -89,4 +89,4 @@ services:
         condition: service_started
     restart: always
     ports:
-      - "5182:5182"
+      - "127.0.0.1:5182:5182"
