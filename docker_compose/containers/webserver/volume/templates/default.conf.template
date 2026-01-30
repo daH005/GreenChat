@@ -13,6 +13,12 @@ server {
         proxy_pass ${WEBSOCKET_URL}/;
     }
 
+    # API documentation (Я не нашёл безболезненого способа обеспечить нормальное функционирование flassger через nginx, 
+    # принято решение работать с ним через localhost:5181)
+    location /api/http/apidocs {
+        return 404;
+    }
+
     # REST api.
     location /api/http {
         proxy_pass ${HTTP_API_URL}/;
