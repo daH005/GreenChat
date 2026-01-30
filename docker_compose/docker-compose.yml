@@ -10,8 +10,8 @@ services:
       web:
         condition: service_started
     volumes:
-      - ../ssl/certificate.crt:/etc/ssl/certs/certificate.crt
-      - ../ssl/private.key:/etc/ssl/private/private.key
+      - ./containers/webserver/volume/ssl/certificate.crt:/etc/ssl/certs/certificate.crt
+      - ./containers/webserver/volume/ssl/private.key:/etc/ssl/private/private.key
       - ./containers/webserver/volume/nginx.conf:/etc/nginx/nginx.conf
       - ./containers/webserver/volume/templates:/etc/nginx/templates
     restart: always
@@ -72,7 +72,6 @@ services:
       redis:
         condition: service_started
     volumes:
-      - ../ssl:/home/user/ssl
       - ../api/media:/home/user/api/media
     restart: always
     ports:
@@ -88,8 +87,6 @@ services:
     depends_on:
       api:
         condition: service_started
-    volumes:
-      - ../ssl:/home/user/ssl
     restart: always
     ports:
       - "5182:5182"

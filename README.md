@@ -35,9 +35,6 @@ HOST=0.0.0.0
 WEBSOCKET_PORT=5180
 HTTP_PORT=5181
 
-SSL_CERTFILE=../ssl/certificate.crt
-SSL_KEYFILE=../ssl/private.key
-
 CORS_ORIGINS=https?://(localhost|127\.0\.0\.1):(5182|2223)
 
 JWT_SECRET_KEY=fill-it
@@ -82,9 +79,6 @@ DEFAULT_TRANSACTION_RETRY_MAX_ATTEMPTS=10
 DEBUG=False
 HOST=0.0.0.0
 PORT=5182
-
-SSL_CERTFILE=../ssl/certificate.crt
-SSL_KEYFILE=../ssl/private.key
 ```
 4. Make `./docker_compose/containers/db/.env` file with the following content:
 ```env
@@ -102,11 +96,11 @@ MYSQL_PASSWORD=fill-it
 ```
 6. Make `./docker_compose/containers/webserver/.env` file with the following content:
 ```env
-WEBSITE_URL=https://web:5182
-HTTP_API_URL=https://api:5181
-WEBSOCKET_URL=https://api:5180
+WEBSITE_URL=http://web:5182
+HTTP_API_URL=http://api:5181
+WEBSOCKET_URL=http://api:5180
 ```
-7. Provide `./ssl/certificate.crt` and `./ssl/private.key` with `./build_helpers/gen_ssh_files.sh`
+7. Provide `certificate.crt` and `private.key` with `./build_helpers/gen_ssh_files.sh` in `./docker_compose/containers/webserver/volume/ssl`
 8. Start shell-scripts:
 ```sh
 ./docker_compose/shell/run.sh
